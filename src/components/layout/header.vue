@@ -7,7 +7,7 @@
             $router.push({ name: 'live' })
           }
           ">
-            <v-img :src="Img.OleLogo" height="42" width="100"></v-img>
+            <v-img :src="Img.OleLogo" height="43" width="175"></v-img>
           </div>
           <ul class="header_nav">
             <li v-for="(item, key) in navList" :key="key" class="nav_item"
@@ -21,13 +21,7 @@
         </div>
         <v-spacer />
         <div class="header_right">
-          <!--          <v-text-field v-if="isSearch" v-model="keyword" class="header_global_search" :placeholder="$t(`Page['搜索']`)"-->
-          <!--            solo dense height="32" clearable @keydown="handleKeydown" @click:prepend-inner="handleClickInner"-->
-          <!--            background-color="#ffffff25" full-width>-->
-          <!--            <template v-slot:prepend-inner>-->
-          <!--              <v-img :src="Img.GlobalSearch" contain height="20" width="20"></v-img>-->
-          <!--            </template>-->
-          <!--          </v-text-field>-->
+
           <template v-if="token">
             <v-badge :content="messageCount" offset-x="16" offset-y="8" :value="!!messageCount" color="error" overlap>
               <layout-info @handleLogout="() => {
@@ -37,8 +31,9 @@
             </v-badge>
           </template>
           <template v-else>
-            <div class="header-Daftar-btn" @click="handleDialog('reg')">{{ $t(`Page['注册']`) }}</div>
             <div class="header-login-btn" @click="handleDialog('login')">{{ $t(`Page['登录']`) }}</div>
+
+            <div class="header-Daftar-btn" @click="handleDialog('reg')">{{ $t(`Page['注册']`) }}</div>
           </template>
           <layout-lang></layout-lang>
         </div>
@@ -272,7 +267,7 @@ export default {
             @apply flex ml-40px pl-0px h-70px;
 
             .nav_item {
-              @apply flex items-center justify-center py-10px px-10px text-center text-lightFirst rounded-l-25px cursor-pointer relative;
+              @apply flex items-center justify-center py-10px px-10px text-center rounded-l-25px cursor-pointer relative;
 
               .active_img {
                 @apply absolute top-0;
@@ -281,7 +276,8 @@ export default {
               .nav_link {
                 .subtitle_1 {
                   padding: 5px 10px;
-                  @apply text-lightFirst text-16px;
+                  @apply text-16px;
+                  color: var(--app-text);
                 }
               }
             }
@@ -290,11 +286,9 @@ export default {
             .nav_item_active {
               .nav_link {
                 .subtitle_1 {
-                  color: #5C330A;
+                  color: var(--text-color);
                   border-radius: 4px;
-                  background: linear-gradient(90deg, #F0B348 0%, #FFF98B 60.43%, #FFD073 100%);
 
-                  // @apply text-lightFirst text-20px font-bold;
                 }
               }
             }
@@ -349,15 +343,16 @@ export default {
           }
 
           .header-Daftar-btn {
-            @apply min-w-90px px-10px h-32px rounded-16px text-14px font-bold leading-32px text-center mr-10px cursor-pointer;
-            border: 1px solid #FFD073;
-            color: #FFD073;
+            @apply min-w-90px px-10px h-32px rounded-5px text-14px font-bold leading-32px text-center cursor-pointer;
+            background: #eee;
+            color: #383838;
           }
 
           .header-login-btn {
-            @apply min-w-90px px-10px h-32px rounded-16px text-14px font-bold leading-32px text-center cursor-pointer;
-            background: linear-gradient(90deg, #F0B348 0%, #FFF98B 60.43%, #FFD073 100%);
-            color: #5C330A;
+            @apply min-w-90px px-10px h-32px rounded-5px text-14px font-bold leading-32px text-center cursor-pointer mr-10px;
+            background: linear-gradient(90deg, #337FF2 0%, #0337E7 100%);
+
+            color: #fff;
           }
         }
       }

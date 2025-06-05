@@ -1470,3 +1470,21 @@ export function applyTheme(theme) {
   document.body.classList.remove('light-theme', 'dark-theme');
   document.body.classList.add(`${theme.name}-theme`);
 }
+// 检查当前主题模式是 "light" 还是 "dark"
+export function getCurrentThemeMode() {
+  if (typeof window === 'undefined') return 'light'; // SSR 兼容
+
+  const classList = document.body.classList;
+
+  if (classList.contains('dark-theme')) {
+    return 'dark';
+  }
+
+  if (classList.contains('light-theme')) {
+    return 'light';
+  }
+
+  // 如果未设置 class，尝试检测系统主题
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  return prefersDark ? 'dark' : 'light';
+}
