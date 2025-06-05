@@ -21,13 +21,13 @@
         </div>
         <v-spacer />
         <div class="header_right">
-<!--          <v-text-field v-if="isSearch" v-model="keyword" class="header_global_search" :placeholder="$t(`Page['搜索']`)"-->
-<!--            solo dense height="32" clearable @keydown="handleKeydown" @click:prepend-inner="handleClickInner"-->
-<!--            background-color="#ffffff25" full-width>-->
-<!--            <template v-slot:prepend-inner>-->
-<!--              <v-img :src="Img.GlobalSearch" contain height="20" width="20"></v-img>-->
-<!--            </template>-->
-<!--          </v-text-field>-->
+          <!--          <v-text-field v-if="isSearch" v-model="keyword" class="header_global_search" :placeholder="$t(`Page['搜索']`)"-->
+          <!--            solo dense height="32" clearable @keydown="handleKeydown" @click:prepend-inner="handleClickInner"-->
+          <!--            background-color="#ffffff25" full-width>-->
+          <!--            <template v-slot:prepend-inner>-->
+          <!--              <v-img :src="Img.GlobalSearch" contain height="20" width="20"></v-img>-->
+          <!--            </template>-->
+          <!--          </v-text-field>-->
           <template v-if="token">
             <v-badge :content="messageCount" offset-x="16" offset-y="8" :value="!!messageCount" color="error" overlap>
               <layout-info @handleLogout="() => {
@@ -244,7 +244,7 @@ export default {
 #app {
   .main_header {
     @apply z-100;
-    background: #292A34;
+    background: var(--app-bg);
 
     .v-toolbar__content {
       @apply py-0px;

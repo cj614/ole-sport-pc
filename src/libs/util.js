@@ -1459,3 +1459,14 @@ export function handleToggleScreenDirection(direction) {
     }
   }
 }
+// 切换主题
+export function applyTheme(theme) {
+  // 设置 CSS 变量
+  for (const key in theme.cssVars) {
+    document.documentElement.style.setProperty(key, theme.cssVars[key]);
+  }
+
+  // 设置 body class
+  document.body.classList.remove('light-theme', 'dark-theme');
+  document.body.classList.add(`${theme.name}-theme`);
+}
