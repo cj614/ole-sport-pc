@@ -1,0 +1,7 @@
+{
+    "i18n-ally.localesPaths": [
+        "src/lang",
+        "public/tcplayer/lang",
+        "src/static/image/lang"
+    ]
+}

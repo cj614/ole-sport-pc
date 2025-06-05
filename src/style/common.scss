@@ -1,0 +1,176 @@
+.m-header-warp::-webkit-scrollbar {
+  width: 0px !important;
+  height: 0px !important;
+}
+
+.no_scrollbar::-webkit-scrollbar {
+  width: 0px !important;
+  height: 0px !important;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #fafafa;
+  border: none;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 6px;
+}
+
+.whiteSpace_nowrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text_omit {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.avatar_img {
+  @apply border-1px border-solid border-white bg-lightFirst;
+}
+
+.main_header {
+  .v-toolbar__content {
+    @apply flex items-center justify-center;
+  }
+}
+
+html,
+body {
+  @apply bg-light;
+  .noWrapWrapper-l31H9iuA {
+    display: none;
+  }
+}
+
+.login_form {
+  .input_item {
+    .v-input__slot {
+      @apply rounded-6px px-20px;
+      border: 1px solid #595959 !important;
+      background: #292A34;
+      .v-input__prepend-inner {
+        margin-top: 12px !important;
+        @apply mr-20px;
+      }
+      .v-input__append-inner {
+        margin-top: 12px !important;
+      }
+
+      input::placeholder,textarea::placeholder {
+        @apply text-info font-normal text-16px;
+      }
+      input,textarea {
+        @apply text-16px text-white;
+      }
+    }
+
+    .v-input__prepend-outer {
+      @apply mb-0px mr-0px h-50px leading-50px;
+      margin-top: 0px !important;
+      .prepend_title {
+        @apply text-16px font-bold text-white w-70px leading-50px text-right mr-20px;
+      }
+    }
+
+    .v-text-field__details {
+      @apply mb-0px;
+    }
+  }
+
+  .item_code_mt {
+    .v-input__slot {
+      .v-input__append-inner {
+        margin-top: 6px !important;
+      }
+    }
+  }
+
+  .input_item_pad {
+    input {
+      border-left: 1px solid #e5e5e5 !important;
+      @apply p-20px;
+    }
+  }
+
+  .file_item {
+    @apply mb-20px;
+    .v-input__append-outer {
+      @apply mb-0px mt-0px relative;
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+      margin-top: 0px !important;
+      .prepend_title {
+        @apply text-16px font-bold text-dark w-70px leading-80px text-right mr-20px;
+      }
+
+      .prepend_file_btn {
+        @apply absolute bottom-0px left-120px rounded-22px text-14px font-normal text-hex-5C330A;
+        background: linear-gradient(90deg, #E5CBAD 0%, #D6B37E 100%);
+      }
+    }
+    .prepend_title_re {
+      @apply absolute text-16px font-bold text-white w-70px leading-80px text-right mr-20px;
+    }
+  }
+
+  .input_box {
+    @apply relative;
+    .prepend_title_re {
+      @apply absolute text-16px font-bold text-white w-180px text-right leading-50px mr-20px;
+      left: -200px;
+    }
+  }
+
+  .radio_item {
+    @apply mt-0px pt-0px;
+    .v-input__prepend-outer {
+      @apply mb-0px mr-0px h-50px leading-50px;
+      margin-top: 0px !important;
+      .prepend_title {
+        @apply text-16px font-bold text-dark w-70px text-right leading-50px mr-20px;
+      }
+    }
+  }
+}
+
+.title_tit {
+  @apply flex items-center mb-20px;
+  .title_name {
+    @apply text-20px font-bold text-dark ml-10px;
+  }
+}
+
+.item_h_title {
+  @apply text-20px font-bold text-white mb-20px;
+}
+
+.v-btn {
+  font-size: 14px !important;
+  padding: 6px 10px !important;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+  text-indent: 0px;
+}
+
+.middle_banner_adv {
+  @apply mb-40px;
+  .v-image {
+    @apply rounded-10px;
+  }
+}
+
+.theme--light.v-input {
+  color: #e5e5e5;
+}
+
+.v-menu__content {
+  box-shadow: none;
+}

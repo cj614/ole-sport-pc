@@ -1,0 +1,8 @@
+version: '2.0'
+services:
+  http-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /www/ole_black_pc:/dist:rw  # 改为挂载到临时目录
