@@ -11,7 +11,7 @@
 
       <!-- 主播信息卡片 -->
       <div class="streamer-card">
-        <div class="frist" :style="{ backgroundImage: `url(${Img.LiveBg})` }">
+        <div class="frist">
           <div class="live-tips" v-if="currentStreamer?.is_live">
             <span>{{ $t('Module["正在直播"]') }}</span>
             <v-img class="live-img" :src="Img.Living"></v-img>
@@ -36,10 +36,11 @@
               <div>
                 <span>{{ $t('Module["胜"]') }}: </span>
                 <span style="margin-right:10px; color: red; font-weight: bold; vertical-align: middle;">{{
-                  currentStreamer?.standing_win
+                  currentStreamer?.standing_win || 0
                 }}</span>
                 <span>{{ $t('Module["败"]') }}:</span>
-                <span style="color: green; font-weight: bold;"> {{ currentStreamer?.standing_fail }}</span>
+                <span style="color: green; font-weight: bold;"> {{ currentStreamer?.standing_fail
+                  || 0 }}</span>
               </div>
             </div>
             <div class="info-item" style="margin-left: 20px;">
@@ -49,10 +50,8 @@
               </div>
             </div>
           </div>
-          <v-btn @click="goanchorRoom(currentStreamer)" v-if="currentStreamer?.is_live"
-            :style="{ background: `url(${Img.ToLive}) !important`, backgroundSize: 'cover', color: '#5C330A !important' }"
-            class="btn">{{
-              $t('Module["进入直播间"]') }}</v-btn>
+          <v-btn @click="goanchorRoom(currentStreamer)" v-if="currentStreamer?.is_live" class="btn toRoomBtn">{{
+            $t('Module["进入直播间"]') }}</v-btn>
           <v-btn @click="goanchorRoom(currentStreamer)" v-else class="btn">{{ $t('Module["等待开播"]') }}...</v-btn>
         </div>
       </div>
@@ -200,9 +199,8 @@ export default {
 <style scoped lang="scss">
 .streamer-page {
   padding: 20px;
-  background: #1a1a1a;
+  background: var(--app-bg);
   min-height: calc(100vh - 224px);
-  color: #fff;
 
 }
 
@@ -224,20 +222,21 @@ export default {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #000;
+  background: var(--live-nav-button-bg);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s;
-  color: #E4CAAB;
+  color: var(--text-color);
   font-size: 20px;
-  border: 3px solid #E4CAAB;
+  border: 3px solid;
+  border-color: var(--live-nav-button-border);
 }
 
 .nav-button:hover {
-  background: #E4CAAB;
-  color: #000;
+  background: var(--text-color);
+  color: #fff;
 }
 
 .streamer-card {
@@ -254,20 +253,21 @@ export default {
 .frist {
   width: 256px;
   height: 290px;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  border: 2px solid;
+  border-color: var(--live-border);
+
+  border-radius: 13px;
   position: relative;
 
   .live-tips {
     position: absolute;
     z-index: 2;
-    background: rgb(0, 0, 0, 0.4);
+    background: var(--bg-color);
     height: 36px;
     display: flex;
     align-items: center;
     justify-items: center;
-    color: #FFEB3B;
+    color: #fff;
     border-radius: 6.73px;
     font-size: 16px;
     font-weight: 500;
@@ -316,12 +316,13 @@ export default {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      color: #fff;
+      color: var(--app-text);
       font-size: 18px;
     }
 
     .card-tag {
-      border: 2px solid #C4AB6F;
+      border: 2px solid;
+      border-color: var(--live-nav-button-border);
       font-size: 12px;
       color: #9F9F9F;
       padding: 0px 15px;
@@ -351,8 +352,8 @@ export default {
     .info-item {
       border-radius: 106px;
       text-align: center;
-      background: #303030;
-      color: #fff;
+      background: var(--live-info-bg);
+      color: var(--app-text);
       font-size: 16px;
       padding: 5px 10px;
 
@@ -371,10 +372,15 @@ export default {
     width: 100% !important;
     height: 53px !important;
     font-size: 26px !important;
-    color: #A18F62;
-    background: #71643E;
+    color: #fff;
+    background: rgba(45, 64, 244, 0.6);
     border-radius: 193px;
     font-weight: 500;
+  }
+
+  .toRoomBtn {
+    background: var(--bg-color);
+    color: #fff;
   }
 }
 
@@ -398,9 +404,9 @@ export default {
   width: 160px;
   height: 182px;
   border: 2px solid #7B87A5;
+  border-color: var(--live-border);
   margin: 2px 5px;
   border-radius: 8px;
-  // overflow: hidden;
   cursor: pointer;
   opacity: 0.7;
   transition: all 0.3s;
@@ -419,7 +425,7 @@ export default {
 .thumbnail.active {
   opacity: 1;
   transform: scale(1);
-  border-color: #FFEB3B;
+  border-color: #2D40F4;
 
   .bg {
     opacity: 1;
@@ -446,8 +452,8 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #303030;
-    color: #E4CAAB;
+    background: var(--live-info-bg);
+    color: var(--text-color);
     border: none;
     font-size: 20px;
     transition: all 0.3s;
@@ -455,8 +461,8 @@ export default {
   }
 
   .btn:hover {
-    background: #E4CAAB;
-    color: #303030;
+    background: var(--bg-color);
+    color: #fff;
   }
 }
 

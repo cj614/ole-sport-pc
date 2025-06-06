@@ -4,20 +4,30 @@ export const themes = {
       name: 'light',
       cssVars: {
         '--text-color': '#2F79F1',
-        '--app-bg': '#ffffff',
+        '--bg-color': '#2D40F4',
+        '--app-header-bg': '#ffffff',
+        '--app-bg': '#FAFAFA',
         '--app-text': '#383838',
-        '--app-border': '#cccccc',
-        '--app-font': 'Arial, sans-serif',
+        '--live-border': '#F1F1F1',
+        '--live-nav-button-bg': '#ffffff',
+        '--live-nav-button-border': 'rgba(45, 64, 244, 0.31)',
+        '--live-info-bg': '#F0F0F0',
+        
       },
     },
     dark: {
       name: 'dark',
         cssVars: {
         '--text-color': '#2F79F1',
-        '--app-bg': '#0B0A08',
+        '--bg-color': '#2D40F4',
+        '--app-header-bg': '#0B0A08',
+        '--app-bg': '#000000',
         '--app-text': '#ffffff',
-        '--app-border': '#444444',
-        '--app-font': 'Courier New, monospace',
+        '--live-border': '#7B87A5',
+        '--live-nav-button-bg': '#000000',
+        '--live-nav-button-border': 'rgba(45, 64, 244, 0.5)',
+        '--live-info-bg': '#303030',
+        
       },
     },
   };

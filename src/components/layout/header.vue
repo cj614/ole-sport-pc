@@ -239,7 +239,7 @@ export default {
 #app {
   .main_header {
     @apply z-100;
-    background: var(--app-bg);
+    background: var(--app-header-bg);
 
     .v-toolbar__content {
       @apply py-0px;
