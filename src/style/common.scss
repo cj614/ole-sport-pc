@@ -53,8 +53,8 @@ body {
   .input_item {
     .v-input__slot {
       @apply rounded-6px px-20px;
-      border: 1px solid #595959 !important;
-      background: #292A34;
+      border: 1px solid #5D6178 !important;
+      background: var(--user-input-bg);
       .v-input__prepend-inner {
         margin-top: 12px !important;
         @apply mr-20px;
@@ -67,7 +67,8 @@ body {
         @apply text-info font-normal text-16px;
       }
       input,textarea {
-        @apply text-16px text-white;
+        @apply text-16px ;
+        color: var(--app-text)
       }
     }
 
@@ -111,20 +112,23 @@ body {
       }
 
       .prepend_file_btn {
-        @apply absolute bottom-0px left-120px rounded-22px text-14px font-normal text-hex-5C330A;
-        background: linear-gradient(90deg, #E5CBAD 0%, #D6B37E 100%);
+        @apply absolute bottom-0px left-120px rounded-22px text-14px font-normal text-hex-fff;
+        background: var(--bg-color);
       }
     }
     .prepend_title_re {
-      @apply absolute text-16px font-bold text-white w-70px leading-80px text-right mr-20px;
+      @apply absolute text-16px font-bold  w-70px leading-80px text-right mr-20px;
+      color: var(--app-text);
     }
   }
 
   .input_box {
     @apply relative;
     .prepend_title_re {
-      @apply absolute text-16px font-bold text-white w-180px text-right leading-50px mr-20px;
+      @apply absolute text-16px font-bold w-180px text-right leading-50px mr-20px;
       left: -200px;
+      color: var(--app-text);
+
     }
   }
 
@@ -148,7 +152,8 @@ body {
 }
 
 .item_h_title {
-  @apply text-20px font-bold text-white mb-20px;
+  @apply text-20px font-bold mb-20px;
+  color: var(--app-text);
 }
 
 .v-btn {

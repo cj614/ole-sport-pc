@@ -4,10 +4,10 @@
 
     <div class="item_tabs">
       <div :class="{ tab_active: type == 'user' }" class="tab" @click="handleClickTab('user')">{{ $t(`Module['个人资料']`)
-        }}</div>
+      }}</div>
 
       <div :class="{ tab_active: type == 'pass' }" class="tab" @click="handleClickTab('pass')">{{ $t(`Module['更改密码']`)
-        }}</div>
+      }}</div>
 
       <div :class="{ tab_active: type == 'email' }" class="tab" @click="handleClickTab('email')">Email</div>
     </div>
@@ -40,38 +40,6 @@
             outlined dense height="50" maxlength="200" full-width></v-text-field>
         </div>
 
-        <!-- <v-radio-group
-          v-model="row"
-          class="radio_item"
-          row
-          single-line
-          outlined
-          dense
-          height="50"
-          full-width
-        >
-          <v-radio label="男" value="radio-1" color="#F9B31F"></v-radio>
-          <v-radio label="女" value="radio-2" color="#F9B31F"></v-radio>
-          <template v-slot:prepend>
-            <div class="prepend_title">性别</div>
-          </template>
-        </v-radio-group>-->
-
-        <!-- <v-text-field
-          :placeholder="请输入状态"
-          class="input_item"
-          single-line
-          outlined
-          dense
-          height="50"
-          maxlength="25"
-          full-width
-          display
-        >
-          <template v-slot:prepend>
-            <div class="prepend_title">状态</div>
-          </template>
-        </v-text-field>-->
 
         <v-btn depressed rounded height="50" width="200" class="item_save_btn" @click="handleSubmit"
           :loading="loading">{{
@@ -437,20 +405,26 @@ export default {
 
   @apply w-full;
 
+  .item_h_title {
+    color: var(--app-text)
+  }
+
   .item_tabs {
     @apply flex items-center w-full h-80px p-5px mb-40px;
     border-bottom: 1px solid #292929;
-
+    border-color: var(--live-nav-button-border);
 
     .tab {
-      @apply w-1/10 h-full flex justify-center items-center text-16px font-bold text-lightFirst;
+      @apply h-1/2 flex justify-center items-center text-16px font-bold;
       margin-right: 20px;
+      color: #5D6178;
       cursor: pointer;
     }
 
     .tab_active {
-      @apply text-hex-E6CCAE;
-      border-bottom: 2px solid #E6CCAE;
+      color: var(--text-color);
+      border-bottom: 2px solid #2F79F1;
+      border-color: var(--text-color)
     }
   }
 
@@ -460,8 +434,8 @@ export default {
     @apply flex items-center justify-center;
 
     .item_save_btn {
-      @apply mt-20px rounded-25px text-16px font-bold text-hex-5C330A;
-      background: linear-gradient(90deg, #F0B348 0%, #FFF98B 60.43%, #FFD073 100%);
+      @apply mt-20px rounded-25px text-16px font-bold text-hex-fff;
+      background: linear-gradient(90deg, #1E3CE8 0.09%, #29D4FF 100%);
     }
   }
 }

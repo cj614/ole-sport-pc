@@ -126,6 +126,7 @@ export default {
 }
 
 .active-btn {
-  background: linear-gradient(90deg, #E5CBAD 0%, #D6B37E 100%);
+  background: linear-gradient(90deg, #1E3CE8 0.09%, #29D4FF 100%);
+  color: #fff;
 }
 </style>

@@ -12,7 +12,7 @@
             </div>
           </template>
           <template v-else>
-            <module-skeletonCard v-if="loading" skeletonClass="p-10px" height="233" width="400"></module-skeletonCard>
+            <module-skeletonCard v-if="loading" skeletonClass="p-10px" height="140" width="350"></module-skeletonCard>
             <page-empty v-else :top="60" :title="$t(`Module['暂无数据']`)"></page-empty>
           </template>
         </div>
@@ -94,7 +94,7 @@ export default {
 
   .title {
     color: var(--app-text);
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
   .special_offer_content {

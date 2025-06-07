@@ -12,6 +12,8 @@ export const themes = {
         '--live-nav-button-bg': '#ffffff',
         '--live-nav-button-border': 'rgba(45, 64, 244, 0.31)',
         '--live-info-bg': '#F0F0F0',
+        '--user-info-bg': '#ffffff',
+        '--user-input-bg': '#FAFAFA',
         
       },
     },
@@ -27,6 +29,8 @@ export const themes = {
         '--live-nav-button-bg': '#000000',
         '--live-nav-button-border': 'rgba(45, 64, 244, 0.5)',
         '--live-info-bg': '#303030',
+        '--user-info-bg': '#191B1F',
+        '--user-input-bg': '#292A34',
         
       },
     },

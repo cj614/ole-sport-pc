@@ -65,39 +65,40 @@ export default {
   }
 }
 </script>
+<style>
+.v-pagination__item,
+.v-pagination__navigation {
+  background: none !important;
+  color: #999999 !important;
+  border: 1px solid !important;
+  border-color: var(--live-nav-button-border) !important;
+}
 
+.v-pagination__item--active {
+  background: var(--bg-color) !important;
+  border-color: var(--bg-color) !important;
+  color: #fff !important;
+}
+
+.notranslate {
+  color: var(--text-color) !important;
+}
+
+.v-pagination__more {
+  color: #999999 !important;
+
+}
+</style>
 <style lang="scss" scoped>
 .m_pagination_warp {
   @apply w-full flex justify-center;
 
-  // .v-pagination__item {
-  //   @apply h-36px min-w-36px w-36px border-1px border-solid border-hex-e5e5e5 text-14px shadow-none rounded-4px text-secondary;
-  // }
 
-  // .v-pagination__navigation {
-  //   @apply h-36px min-w-36px w-36px border-1px border-solid border-hex-e5e5e5 text-14px shadow-none rounded-4px text-secondary;
-  // }
 
-  .v-pagination__item,
-  .v-pagination__navigation {
-    background: none !important;
-    color: #999999 !important;
-    border: 1px solid #303030 !important;
-  }
 
-  .notranslate {
-    color: #E4CAAB !important;
-  }
 
-  .v-pagination__more {
-    color: #999999 !important;
 
-  }
 
-  .v-pagination__item--active {
-    background: #E4CAAB !important;
-    border-color: #E4CAAB !important;
-    color: #030303 !important;
-  }
+
 }
 </style>

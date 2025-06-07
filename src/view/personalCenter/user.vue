@@ -24,7 +24,7 @@
               <span class="count_txt">{{ $t(`Module['消息']`) }}</span>
             </div>
           </div>
-          <div class="moneybox" :style="{ backgroundImage: `url(${Img.DBg})` }">
+          <div class="moneybox">
             <div class="diamondbox">
               <!-- <div class="diamond-text">{{ $t(`Module['钻石']`) }}</div>  -->
               <v-img class="diamond-img" :src="Img.Diamond"></v-img>
@@ -61,7 +61,7 @@
           <li v-for="(item, index) in userNavList" :key="index" class="user_nav_item"
             :class="{ user_nav_item_active: navIndex === index }" @click="handleUserNavClick(item, index)">
             <span>
-              <v-img :src="navIndex === index ? item.activeIcon : item.icon" width="20" height="20"></v-img>
+              <v-img :src="item.icon" width="20" height="20"></v-img>
             </span>
             <span class="item_title">{{ item.title }}</span>
           </li>
@@ -594,7 +594,8 @@ export default {
   @apply pt-20px pb-40px flex;
 
   .personal_menu {
-    @apply w-368px h-940px bg-hex-191B1F rounded-10px mr-20px;
+    @apply w-368px h-940px rounded-10px mr-20px;
+    background: var(--user-info-bg);
 
     .menu_header {
       @apply w-full py-20px mb-20px;
@@ -603,7 +604,8 @@ export default {
         @apply flex flex-col items-center justify-center;
 
         .user_name {
-          @apply text-16px font-bold text-white mt-10px;
+          @apply text-16px font-bold mt-10px;
+          color: var(--app-text);
         }
 
         .user_id {
@@ -619,7 +621,7 @@ export default {
           cursor: pointer;
 
           .count_txt {
-            @apply my-2px font-normal text-14px text-hex-79715E;
+            @apply my-2px font-normal text-14px text-hex-5D6178;
 
           }
 
@@ -627,9 +629,8 @@ export default {
             margin-top: 25px;
             text-align: center;
             font-size: 20px;
-            background: linear-gradient(90deg, #DEC097 0%, #E5C189 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--text-color);
+
             font-weight: 500;
           }
         }
@@ -639,7 +640,7 @@ export default {
         width: 336px;
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
-        background-size: cover;
+        background: var(--bg-color);
         height: 70px;
         line-height: 70px;
         color: #fff;
@@ -688,8 +689,8 @@ export default {
           line-height: 18px;
           border-radius: 133px;
           padding: 0 10px;
-          background: linear-gradient(90deg, rgba(240, 179, 72, 1) 0%, rgba(255, 249, 139, 1) 60.43%, rgba(255, 208, 115, 1) 100%);
-          color: #6b4724;
+          background: #fff;
+          color: var(--bg-color);
         }
       }
     }
@@ -771,27 +772,28 @@ export default {
         @apply flex items-center pl-40px h-49px relative cursor-pointer;
 
         .item_title {
-          @apply text-16px font-normal text-white ml-10px;
+          @apply text-16px font-normal ml-10px;
+          color: var(--app-text);
         }
       }
 
       .user_nav_item_active {
-        background: linear-gradient(90deg, #191B1F 0%, #D7B47E 100%);
+        background: linear-gradient(90deg, var(--user-input-bg) 0%, #2D40F4 100%);
 
-        .item_title {
-          @apply text-lightFirst;
-        }
+
       }
 
       .user_nav_item_active::before {
         content: '';
-        @apply w-4px h-49px bg-hex-E2BD50 absolute left-0px;
+        @apply w-4px h-49px bg-hex-2D40F4 absolute left-0px;
       }
     }
   }
 
   .personal_content {
-    @apply w-980px min-h-940px bg-hex-191B1F rounded-10px py-20px px-30px;
+    @apply w-980px min-h-940px rounded-10px py-20px px-30px;
+    background: var(--user-info-bg);
+
   }
 }
 </style>

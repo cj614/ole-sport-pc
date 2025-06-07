@@ -362,14 +362,15 @@ export default {
     border-bottom: 1px solid #292929;
 
     .tab {
-      @apply w-1/10 h-full flex justify-center items-center text-16px font-bold text-lightFirst;
+      @apply h-1/2 flex justify-center items-center text-16px font-bold text-lightFirst;
       margin-right: 20px;
       cursor: pointer;
     }
 
     .tab_active {
-      @apply text-hex-E6CCAE;
-      border-bottom: 2px solid #E6CCAE;
+      color: var(--text-color);
+      border-bottom: 2px solid #2F79F1;
+      border-color: var(--text-color)
     }
   }
 
@@ -383,27 +384,35 @@ export default {
         @apply flex flex-col;
 
         .herder {
-          @apply h-80px flex items-center justify-between bg-hex-292A34 border-b-1px border-solid border-accent cursor-pointer;
+          @apply h-80px flex items-center justify-between border-b-1px border-solid border-accent cursor-pointer;
           padding: 0 10px;
+          background: var(--app-bg);
 
           .title_1 {
             @apply flex items-center;
 
             .txt_title {
-              @apply font-bold text-white text-16px ml-20px;
+              @apply font-bold text-16px ml-20px;
+              color: var(--app-text)
             }
 
             .sub {
               @apply flex flex-col ml-20px;
 
               .sub_title {
-                @apply font-bold text-16px text-white;
+                @apply font-bold text-16px;
+                color: var(--app-text)
               }
 
               .sub_txt {
-                @apply font-normal text-12px text-white mt-10px;
+                @apply font-normal text-12px mt-10px;
+                color: var(--app-text)
               }
             }
+          }
+
+          .txt_time {
+            color: var(--app-text)
           }
 
           .img_p {
@@ -420,10 +429,12 @@ export default {
         }
 
         .content {
-          @apply min-h-80px max-h-300px px-20px py-10px pl-72px bg-hex-f0f0f0 flex items-center justify-between overflow-auto;
+          @apply min-h-80px max-h-300px px-20px py-10px pl-72px flex items-center justify-between overflow-auto;
+          background: var(--live-info-bg);
 
           .txt_content {
-            @apply text-dark text-16px py-10px leading-21px cursor-pointer;
+            @apply text-16px py-10px leading-21px cursor-pointer;
+            color: var(--app-text)
           }
 
           .img_p {
@@ -447,11 +458,11 @@ export default {
     background: linear-gradient(90deg, #E5CBAD 0%, #D6B37E 100%);
 
     .h_txt {
-      @apply font-bold text-20px text-hex-5C330A;
+      @apply font-bold text-20px text-hex-2D40F4;
     }
 
     .h_date {
-      @apply text-14px text-hex-5C330A font-normal;
+      @apply text-14px text-hex-2D40F4 font-normal;
     }
   }
 

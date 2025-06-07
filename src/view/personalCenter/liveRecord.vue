@@ -1,16 +1,11 @@
 <template>
   <div class="attention_warp">
-    <p class="item_h_title">{{$t(`Module['直播记录']`)}}</p>
+    <p class="item_h_title">{{ $t(`Module['直播记录']`) }}</p>
 
     <div class="attention_content">
       <module-table :headers="headers" :loading="loading" :items="items"></module-table>
-      <module-pagination
-        :paddingTop="60"
-        :page="page.page"
-        :count="page.count"
-        :limit="page.limit"
-        @pageList="pageList"
-      ></module-pagination>
+      <module-pagination :paddingTop="60" :page="page.page" :count="page.count" :limit="page.limit"
+        @pageList="pageList"></module-pagination>
     </div>
   </div>
 </template>
@@ -101,6 +96,7 @@ export default {
 <style lang="scss" scoped>
 .attention_warp {
   @apply h-full;
+
   .attention_content {
     @apply flex flex-col h-full overflow-hidden;
   }

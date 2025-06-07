@@ -10,10 +10,7 @@
               <v-avatar width="60" class="relative" height="60">
                 <v-img :src="item.img_url"></v-img>
               </v-avatar>
-              <!--              <div :class="[-->
-              <!--                'live_color',-->
-              <!--                { live_color_2: item.room_status === 0 }-->
-              <!--              ]"></div>-->
+
             </div>
 
             <span class="anchor_name">{{ item.user_name }}</span>
@@ -26,7 +23,7 @@
               $t(`Module['查看赛程']`)
             }}
             </v-btn>
-            <v-btn depressed rounded outlined color="#F9B31F" class="btn2 btn" min-width="88" height="34"
+            <v-btn depressed rounded outlined color="#2D40F4" class="btn2 btn" min-width="88" height="34"
               @click="focusAnchor(item)">{{ $t(`Module['取消关注']`) }}
             </v-btn>
           </div>
@@ -140,7 +137,8 @@ export default {
     @apply flex pl-0px flex-wrap max-h-760px;
 
     .attention_item {
-      @apply flex justify-between items-center h-100px p-20px w-[calc(50%-10px)] bg-accentSecond mb-20px rounded-10px;
+      @apply flex justify-between items-center h-100px p-20px w-[calc(50%-10px)] mb-20px rounded-10px;
+      background: var(--app-bg);
 
       .item_Anchor {
         @apply flex items-center;
@@ -158,7 +156,9 @@ export default {
         }
 
         .anchor_name {
-          @apply text-16px font-bold text-dark ml-10px;
+          @apply text-16px font-bold ml-10px;
+          color: var(--app-text);
+
         }
       }
 
@@ -167,7 +167,7 @@ export default {
 
         .btn1 {
           @apply text-lightFirst;
-          background: linear-gradient(180deg, #ffd557 0%, #fbab12 100%);
+          background: linear-gradient(180deg, #29D4FF 0%, #1E3CE8 100%);
         }
 
         .btn2 {
@@ -177,6 +177,7 @@ export default {
         .btn3 {
           @apply text-primaryFirst;
           border: 1px solid #1862c8;
+          background: none;
         }
 
         .btn {
