@@ -3,7 +3,7 @@
     <div class="app_content">
       <div class="app_sucai">
         <span>
-          <v-img :src="Img.SuCai" width="622" height="494"></v-img>
+          <v-img :src="getCurrentThemeMode() === 'light' ? Img.SuCai : Img.SuCaiDark" width="429" height="527"></v-img>
         </span>
       </div>
       <div class="app_group">
@@ -89,6 +89,7 @@ import 'viewerjs/dist/viewer.css'
 import { component as viewer } from 'v-viewer'
 import { homeDownLoad } from '@/api/global'
 import VueQrcode from "@chenfengyuan/vue-qrcode";
+import { getCurrentThemeMode } from "@/libs/util";
 
 export default {
   components: {
@@ -111,6 +112,7 @@ export default {
         IosDownload: "",
         CodeBg: require(`@/${this.$img.Page.App.CodeBg}`),
         SuCai: require(`@/${this.$img.Page.App.SuCai}`),
+        SuCaiDark: require(`@/${this.$img.Page.App.SuCaiDark}`),
         LeftArrow: require(`@/${this.$img.Page.App.LeftArrow}`),
         RightArrow: require(`@/${this.$img.Page.App.RightArrow}`)
       },
@@ -197,6 +199,7 @@ export default {
   mounted() {
   },
   methods: {
+    getCurrentThemeMode,
     async homeDownLoad() {
       const { Code, Data } = await homeDownLoad()
       if (Code == 200) {
@@ -228,6 +231,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: var(--live-nav-button-bg);
 
   .app_content {
     @apply flex items-center;
@@ -243,7 +247,7 @@ export default {
 
         .sys_Bg {
           @apply w-231px h-231px flex items-center justify-center;
-          background: #292A34;
+          background: var(--live-info-bg);
           border-radius: 20px;
 
           .imgboxs {
@@ -262,7 +266,7 @@ export default {
             .corner::after {
               content: "";
               position: absolute;
-              background-color: #E2BD50;
+              background-color: #2D40F4;
               /* 角的颜色 */
             }
 
@@ -362,8 +366,8 @@ export default {
           .sys_btn_item {
             @apply rounded-25px text-16px;
             font-weight: 500;
-            background: linear-gradient(90deg, #F0B348 0%, #FFF98B 60.43%, #FFD073 100%);
-            color: #5C330A;
+            background: linear-gradient(90deg, #337FF2 0%, #0337E7 100%);
+            color: #fff;
 
           }
         }

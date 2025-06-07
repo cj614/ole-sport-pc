@@ -20,13 +20,19 @@ let IMAGE_LIST = {
       LoginClose: '/page/login/icon_close_black.png',
       LoginDefault: '/page/login/image_login_default.png'
     },
-
+    Active: {
+      Active1: '/page/active/active_1.png',
+      Active2: '/page/active/active_2.png',
+      Active3: '/page/active/active_3.png',
+      Active4: '/page/active/active_4.png',
+    },
     Layout: {
       LangDown: '/page/layout/icon_lang_down.png',
       BannerAdv: '/page/layout/image_banner_adv.png',
       BannerFooterAdv: '/page/layout/image_banner_footer_adv.png',
       QRCode: '/page/layout/image_qr_code.png',
       OleLogo: '/page/layout/image_ole_logo.png',
+      OleLogoDark: '/page/layout/image_ole_logo-dark.png',
       MenuDown: '/page/layout/icon_menu_down.png',
       GlobalSearch: '/page/layout/icon_global_search.png',
       Facebook: '/page/layout/icon_facebook.png',
@@ -218,6 +224,7 @@ let IMAGE_LIST = {
       ThumbUped: '/page/news/thumb-uped.png',
       VideoPlay: '/page/news/image_video_play.png'
     },
+    
 
     Live: {
       TeamIcon: '/page/live/icon_live_team.png',
@@ -335,6 +342,7 @@ let IMAGE_LIST = {
       Code: '/page/app/image_app_code.png',
       CodeBg: '/page/app/image_app_codeBg.png',
       SuCai: '/page/app/image_app_sucai.png',
+      SuCaiDark: '/page/app/image_app_sucai-dark.png',
       IsoZH1: '/page/app/image_ios_zh_1.png',
       IsoZH2: '/page/app/image_ios_zh_2.png',
       IsoZH3: '/page/app/image_ios_zh_3.png',

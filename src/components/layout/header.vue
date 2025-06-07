@@ -7,7 +7,8 @@
             $router.push({ name: 'live' })
           }
           ">
-            <v-img :src="Img.OleLogo" height="43" width="175"></v-img>
+            <v-img :src="getCurrentThemeMode() === 'light' ? Img.OleLogo : Img.OleLogoDark" height="43"
+              width="175"></v-img>
           </div>
           <ul class="header_nav">
             <li v-for="(item, key) in navList" :key="key" class="nav_item"
@@ -59,6 +60,8 @@
 </template>
 
 <script>
+import { getCurrentThemeMode } from "@/libs/util";
+
 export default {
   name: 'main-header',
   data() {
@@ -71,6 +74,7 @@ export default {
       keyword: '',
       Img: {
         OleLogo: require(`@/${this.$img.Page.Layout.OleLogo}`),
+        OleLogoDark: require(`@/${this.$img.Page.Layout.OleLogoDark}`),
         GlobalSearch: require(`@/${this.$img.Page.Layout.GlobalSearch}`),
         MenuDown: require(`@/${this.$img.Page.Layout.MenuDown}`)
       },
@@ -106,6 +110,10 @@ export default {
           path: 'home'
         },
         {
+          name: this.$t('Module["赛程"]'),
+          path: 'match',
+        },
+        {
           name: this.$t('Page["主播"]'),
           path: 'live',
         },
@@ -113,23 +121,19 @@ export default {
         //   name: this.$t('Page["文章"]'),
         //   path: 'sportNews'
         // },
+        // {
+        //   name: this.$t('Page["聊天"]'),
+        //   path: 'chatRoom'
+        // },
+        // {
+        //   name: this.$t('Module["视频"]'),
+        //   path: 'video'
+        // },
         {
-          name: this.$t('Page["聊天"]'),
-          path: 'chatRoom'
-        },
-        {
-          name: this.$t('Module["视频"]'),
-          path: 'video'
-        },
-        {
-          name: this.$t('Page["活动"]'),
+          name: this.$t('Page["优惠活动"]'),
           path: 'activity'
         },
-        {
-          name: this.$t('Page["个人中心"]'),
-          path: 'personalCenter',
-          isLogin: true
-        },
+
         {
           name: this.$t('Page["下载"]') + ' APP',
           path: 'App'
@@ -164,6 +168,7 @@ export default {
   },
 
   methods: {
+    getCurrentThemeMode,
     handleDialog(type) {
       this.type = type
       this.$nextTick(() => {

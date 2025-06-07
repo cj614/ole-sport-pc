@@ -26,7 +26,7 @@ export default {
 <style lang="scss" scoped>
 .m_self_bg {
   @apply flex-1 h-full bg-no-repeat bg-center;
-  background: #000;
+  background: var(--app-bg);
 
   // background: url(../../static/image/page/layout/image_ole_bg.png);
   // background-position: center center;

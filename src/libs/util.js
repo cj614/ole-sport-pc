@@ -1485,6 +1485,7 @@ export function getCurrentThemeMode() {
   }
 
   // 如果未设置 class，尝试检测系统主题
+  
   const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   return prefersDark ? 'dark' : 'light';
 }
